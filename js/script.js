@@ -85,6 +85,19 @@ document.getElementById("submit")
 
 		let names = JSON.parse(localStorage.getItem(date));
 
+
+		if (name == "" || date == 0 ) {
+			alert(" Type your name and date !");
+		}
+
+		// if (typeof name === number || typeof name === car || typeof name === Boolean ) {
+		// 	alert(" You have to type your name correctly !");
+		// }
+		if (names.includes(name) && name != " ") {
+			alert("Hay, who are you ? This day " + name + " " + "entered one time");
+			data_form.name.value = "";
+		}
+
 		if (names && name.length > 0) {
 			names = JSON.parse(localStorage.getItem(date));
 		} else {
@@ -95,16 +108,17 @@ document.getElementById("submit")
 		if (!dates.includes(date) && date.length > 1 ) {
 			dates.push(date);
 			localStorage.getItem(date, JSON.stringify(names));
-
 		}
 
 
 		if (!names.includes(name) && dates.includes(date) && name.length > 1) {
 			names.push(name);
 			localStorage.setItem(date, JSON.stringify(names));
-		} else {
-			alert("hay, who are you ? " + name + " " + "entered one time");
-		}
+			alert(" Successfully received your addend. ");
+			data_form.name.value = "" ;
+		} 
+		
+		
 
 
 		document.getElementById("list").innerHTML = names;
