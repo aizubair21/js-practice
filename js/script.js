@@ -75,35 +75,37 @@ let roll2 = [1, 5, 7, 11, 13];
 
 let dates = [];
 let names = [];
-let Day = new Date();
-let toDay = Day.getDate();
-console.log(toDay);
+
 document.getElementById("submit")
 	.addEventListener("click", function () {
 		let date = data_form.date.value;
 		let name = data_form.name.value;
+		console.log(typeof name);
+		// localStorage.setItem(date, " " );
 
-		let names = JSON.parse(localStorage.getItem(date));
-
-
-		if (name == "" || date == 0 ) {
-			alert(" Type your name and date !");
+		if (name == "0" || name == "Boolean" || name == " " || date == 0) {
+			alert(" You have to type your name correctly !");
 		}
 
-		// if (typeof name === number || typeof name === car || typeof name === Boolean ) {
-		// 	alert(" You have to type your name correctly !");
-		// }
-		if (names.includes(name) && name != " ") {
-			alert("Hay, who are you ? This day " + name + " " + "entered one time");
-			data_form.name.value = "";
+		
+		if (names && names.length > 1) {
+			names = JSON.parse(localStorage.getItem(date));
 		}
 
-		if (names && name.length > 0) {
+		
+
+		names = localStorage.getItem(date);
+		if (names && name.length > 1) {
 			names = JSON.parse(localStorage.getItem(date));
 		} else {
 			names = [];
 		}
 
+
+		if (names.includes(name) && name != " ") {
+			alert("Hay, who are you ? This day " + name + " " + "entered one time");
+			data_form.name.value = "";
+		}		
 
 		if (!dates.includes(date) && date.length > 1 ) {
 			dates.push(date);
