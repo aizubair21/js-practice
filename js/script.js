@@ -88,19 +88,26 @@ document.getElementById("submit")
 			names = [];
 		}
 
+
 		if (!dates.includes(date) && date.length > 1 ) {
 			dates.push(date);
-			localStorage.getItem(JSON.stringify(names));
+			localStorage.getItem(date, JSON.stringify(names));
+		} else {
+			alert(date+ "isn't tody ! you entered a new days.");
 		}
+
 
 		if (!names.includes(name) && dates.includes(date) && name.length > 1) {
 			names.push(name);
-			localStorage.setItem(JSON.stringify(names));
+			localStorage.setItem(date, JSON.stringify(names));
+		} else {
+			alert("hay, who are you ? " + name + " " + "entered one time");
 		}
 
+		
 		document.getElementById("list").innerHTML = names;
 
-		localStorage.setItem(date, JSON.stringify(name));
+		
 	});
 
 
