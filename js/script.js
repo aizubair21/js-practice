@@ -108,7 +108,7 @@ document.getElementById("submit")
 
 
 		document.getElementById("list").innerHTML = names;
-
+		
 		
 	});
 
