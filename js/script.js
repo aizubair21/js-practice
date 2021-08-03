@@ -75,6 +75,9 @@ let roll2 = [1, 5, 7, 11, 13];
 
 let dates = [];
 let names = [];
+let Day = new Date();
+let toDay = Day.getDate();
+console.log(toDay);
 document.getElementById("submit")
 	.addEventListener("click", function () {
 		let date = data_form.date.value;
@@ -92,8 +95,7 @@ document.getElementById("submit")
 		if (!dates.includes(date) && date.length > 1 ) {
 			dates.push(date);
 			localStorage.getItem(date, JSON.stringify(names));
-		} else {
-			alert(date+ "isn't tody ! you entered a new days.");
+
 		}
 
 
@@ -104,7 +106,7 @@ document.getElementById("submit")
 			alert("hay, who are you ? " + name + " " + "entered one time");
 		}
 
-		
+
 		document.getElementById("list").innerHTML = names;
 
 		
