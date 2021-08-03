@@ -80,10 +80,10 @@ document.getElementById("submit")
 	.addEventListener("click", function () {
 		let date = data_form.date.value;
 		let name = data_form.name.value;
-		console.log(typeof name);
+		// console.log(typeof name);
 		// localStorage.setItem(date, " " );
 
-		if (name == "0" || name == "Boolean" || name == " " || date == 0) {
+		if (name == "0" || name === "Boolean" || name == "" || date == 0) {
 			alert(" You have to type your name correctly !");
 		}
 
@@ -118,18 +118,30 @@ document.getElementById("submit")
 			localStorage.setItem(date, JSON.stringify(names));
 			alert(" Successfully received your addend. ");
 			data_form.name.value = "" ;
+			make_list(date);
 		} 
-		
-		
 
-
-		document.getElementById("list").innerHTML = names;
+		// document.getElementById("list").innerHTML = names;
 		
-		
-	});
+});
 
+function make_list(date) {
+    let list = '';
 
- 
+    names = localStorage.getItem(date);
+
+    if (names && names.length > 0) {
+        names = JSON.parse(localStorage.getItem(date));
+        for (let index = 0; index < names.length; index++) {
+            const element = names[index];
+            list += `<li class="list-group-item">${element}</li>`;
+        }
+    } else {
+        list = '<li class="list-group-item">no result</li>';
+    }
+
+    document.getElementById('list').innerHTML = list;
+}
  
  
 
