@@ -2,180 +2,50 @@
 <html>
 
 <head>
-<style>
-.container{
-	width: 300px;
-	margin: 0 auto; 
-	border: 1px solid black; 
-	justify-content: center;
-	text-align: center; 
-}
-#gameDisplay{
-	height:75px;
-	width: 150px;
-	display: block;
-	margin: 0 auto; 
-	padding-bottom: 10px;
-	
-	
-}
-#gameDisplay #demo{
-	font-size: 15px;
-	line-height: 9px;
-	
-}
-
-.gameStart{
-}
-.play-duringer{
-	height: 150px;
-	width: 150px;
-	margin: 0 auto;
-	text-align: center;
-}
-#demo2{
-	height: 50px; 
-}
-
-</style>
- 
+<meta contenty>
+<link rel="stylesheet" href="css/style.css"> 
 </head>
 
 <body>
 
 <div class="container">
 
-	<h2>My First JavaScript Game</h2>
-	<div class="gameStart">
-	<button type="button" onclick="autoStart()">Click to start game</button>
-	</div >
 	
-	
-	<div id="gameDisplay">
-	<p id="demo"></p>
-	<p id="showIndex"></p>
-	</div>
+	<div class="overlay"></div>
 
-	<div class="play-duringer">
+	<div class="app_body">
+		<h2>My First JavaScript Game</h2>
+		<div class="gameStart">
+			<button type="button" onclick="autoStart()">Click to start game</button>
+		</div >
+		
+		
+		<div id="gameDisplay">
+			<p id="demo"></p>
+			<p id="showIndex"></p>
+		</div>
 	
-	<input type="text" id="playerItem" placeholder="type your thinking name:" style="width:150px; text-align: center;" />
-	<p id="demo2"></p>
-	<button  onclick="testInput()">CHECK</button>
-
+		<div class="play-duringer">
+		
+			<input type="text" id="playerItem" placeholder="type your thinking name:" style="width:150px; text-align: center;" />
+			<p id="demo2"></p>
+			<button  onclick="testInput()">CHECK</button>
+	
+		</div>
 	</div>
 
 </div>
+<!-- /*	
+//<div class="showIndexBox">
+	<table>
+		<tr id="indexBox">
+			<td class="list-item"></td>
+		</tr>
+	</table>
+</div> */ -->
 
 
 
-<script>
-
-	//my selected item
-	var myArray = ["mango", "carrot", "water", "soil", "papiya" , "rice" , "sugar" , "salt" , "egg", "fish" , "milk" , "candy" , "cake"];
-	var len = myArray.length;
-	var selectFromItem;
-
-	//boolean. it means game is not started.
-	let is_started = false; 
-
-	function autoStart(){
-		startGame();
-	}
-
-	function startGame(){
-		//when click it cahnge to true
-		is_started = true;
-
-		document.getElementById('demo2').innerHTML = "";
-
-		var selectitem = Math.floor(Math.random() * 14+1);
-
-		//select an item from arry, arrcoding to random integer
-		selectFromItem = myArray[selectitem];
-
-		//take length which is selected from arry
-		var selectItemLen = selectFromItem.length;
-
-		//take first[0] index of selected item
-		var firstIndex = selectFromItem[0];
-
-		//make first index to uppercase
-		var firstIndexUpper = firstIndex.toUpperCase();
-
-		//then take last index
-		var lastIndex = selectFromItem[selectFromItem.length-1];
-
-		//make last index to uppercae
-		var lastIndexUpper = lastIndex.toUpperCase();	
-
-		document.getElementById('demo').innerHTML = "<strong>" + selectItemLen + "<strong>" + " <br> charecter integer";
-		document.getElementById('showIndex').innerHTML =
-		"First index is: " + firstIndexUpper + "<br>" + "last index is: " + lastIndexUpper + "<br>"
-		;
-			
-			
-	}
-
-
-
-
-
-	function testInput(){
-
-
-		try {
-			if (is_started !== true){
-				/*if game isn't start*/
-				alert("Game isn't started yet!, please start the game");
-				
-			} else {
-				/*if game is started..*/
-				let catchItem = document.getElementById('playerItem').value;
-
-				if ( catchItem == 0 ){
-					/*if input item is black*/
-					document.getElementById('demo2').innerHTML = "input in not valid !";
-				} else {
-	
-					if (selectFromItem == catchItem){
-						// document.getElementById('demo2').innerHTML = "You win !";//
-						alert("you won ");
-						startGame();
-				
-					} else {
-						// for (let index = 0; index = 3; index+1) {
-						// 	const element = index;
-						// }
-
-						document.getElementById('demo2').innerHTML = " You loss !";
-						document.getElementById("playerItem").value = "" ;
-						
-				
-					}
-
-				}
-					
-			}
-		}
-		catch(err){
-			document.getElementById('demo2').innerHTML = err.message;
-		}	
-		
-	}
-
-
-
-
-
-
-
-
-	// for(var i = 0; i < 200; i ++){
-	// 	var total += i;
-	// 	document.getElementById('demo2').innerHTML = total;
-	// }
-
-
-</script>
+<script src="js/script.js"></script>
 </body>
 </html> 
