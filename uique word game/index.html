@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Unique word game </title>
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="game-body">
+			<div class="overlay"></div>
+			<div class="overlay2"></div>
+			<div class="game-display">
+				<input type="text" id="start-command" placeholder="Your Name :">
+
+				<h2 >Game Output</h2>
+
+				<p id="show-output"> </p><br></br>
+
+				<div class="clear-screan">
+				
+					<p id="notify"></p>
+					<p id="show-all"></p>
+					<p id="show-error"></p>
+					
+					
+				</div>
+			</div>
+			<div class="game-control">
+					
+					<button onclick="gameStart()">Start Game</button>
+					<input type="text" id="game-input" placeholder="Type your word:">
+					<button onclick="checkItem()">GO</button><br>
+					<button onclick="showItem()">see all</button>
+				</div>
+		</div>
+	</div>
+	
+	
+	
+	<script src="js/script.js"></script>
+</body>
+</html>

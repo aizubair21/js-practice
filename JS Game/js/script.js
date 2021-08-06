@@ -75,11 +75,12 @@
 						startGame();
 				
 					} else {
+						alert(" Not Correct !");
 						// for (let index = 0; index = 3; index+1) {
 						// 	const element = index;
 						// }
 
-						alert(" Not Correct !");
+						
 						// document.getElementById("playerItem").value = "" ;
 
                         
@@ -108,7 +109,7 @@
                         // }
 
                         // testIfError(catchItem, selectFromItem);   
-                        startGame();
+                        
                             
 
 					}

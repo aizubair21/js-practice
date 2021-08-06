@@ -1,0 +1,150 @@
+
+
+
+
+@media screen and (max-width:360px) {
+    .container{
+        width: 95%;
+        margin: 0 auto;
+        /* border: 1px solid red; */
+        box-shadow: 0px 0px 5px gray;
+        background-color: rgba(255, 255, 255, .2);
+        border-radius: 5px;
+        padding: 5px 0;
+        /* background-image: url('/image/pic6.jpeg'); */
+        
+    }
+
+    body {
+        background-image: url('/image/pic6.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .game-body {
+        position: relative;
+        /* border: 1px solid red; */
+        border-radius: 10px;
+        box-shadow: 0px 0px 3px rgb(94, 89, 89);
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        height: 90vh;
+        display: flex;
+        background-color: rgba(0, 128, 0, .8);
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+
+    .game-display {
+        flex: 1;
+        z-index: 999;
+
+
+
+    }
+    .game-control {
+        z-index: 1;
+    }
+
+    .overlay {
+        position: absolute;
+        top: -100px;
+        left: -50px;
+        z-index:0;
+        height: 400px;
+        width: 150%;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, .8);
+        transform: rotate(45deg);
+    }
+
+    input {
+        padding: 5px;
+        text-align: center;
+        border: 1px solid rgb(255, 255, 255);
+        box-shadow: 0px 0px 2px white;
+        margin: 5px;
+        border-radius: 25px;
+        background-color: inherit;
+    }
+    input:focus {
+        border: 1px solid tomato;
+        outline:0;
+        box-shadow: 0px 0px 5px tomato;
+    }
+    button{
+        padding: 5px;
+        cursor: pointer;
+        text-transform:capitalize ;
+
+    }
+    button:hover {
+        background-color: ;
+        opacity: .8;
+    }
+
+}
+
+@media (min-width: 360px) and (max-width:570px) {
+    .container {
+        width: 95%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .game-body {
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+@media (min-width:570px) {
+    .container {
+        width: 570px;
+        margin: 0 auto;
+        box-shadow: 0px 0px 5px black;
+        padding: 1px 0;
+    }
+    .game-body {
+        position: relative;
+        /* border: 1px solid red; */
+        border-radius: 10px;
+        box-shadow: 0px 0px 3px rgb(94, 89, 89);
+        padding: 10px;
+        margin: 25px;
+        text-align: center;
+        height: 90vh;
+        display: flex;
+        background-color: rgba(0, 128, 0, .8);
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    
+    .game-display {
+        flex: 1;
+        z-index: 999;
+    
+    
+    
+    }
+    .game-control {
+        z-index: 1;
+    }
+    
+    .overlay {
+        position: absolute;
+        top: -100px;
+        left: -50px;
+        z-index:0;
+        height: 400px;
+        width: 150%;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, .8);
+        transform: rotate(45deg);
+    }
+    
+
+    
+}
