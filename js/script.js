@@ -2,10 +2,10 @@
 // alert("hello, i'm connected !");
 
 
-let car = {};
- car["name"] = "nova";
- car["age"] = 50;
- car["address"] = "lalmohan";
+// let car = {};
+//  car["name"] = "nova";
+//  car["age"] = 50;
+//  car["address"] = "lalmohan";
 
 // let number = [1,5,3,8,52,2,87,52,48,52,12,545,123,45, 17, 110];
 // let number2 = [9, 110, 11, 12, 14, 15, 17, 20];
@@ -80,11 +80,14 @@ document.getElementById("submit")
 	.addEventListener("click", function () {
 		let date = data_form.date.value;
 		let name = data_form.name.value;
-		// console.log(typeof name);
+		let upName = name.toUpperCase();
+		console.log(upName);
 		// localStorage.setItem(date, " " );
+		//let clearAll = localStorage.getItem(date).clear;
 
-		if (name == "0" || name === "Boolean" || name == "" || date == 0) {
-			alert(" You have to type your name correctly !");
+		if ( isNaN(name) || name == "0" || name === "Boolean" || name == "" || date == 0) {
+			alert(" You have to type your name and date correctly !");
+			document.getElementById('input_name').innerHTML = " ";
 		}
 
 		

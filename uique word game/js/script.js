@@ -17,9 +17,9 @@ function gameStart(){
 	let player_name = document.getElementById('start-command').value;
 
 	if (player_name != ""){
-
+		player_name = document.getElementById('start-command').value = "";
 		document.getElementById('show-output').innerHTML = "Your first word is:<br> " + randomlySelect.toUpperCase(); 
-		// is_started = true; 
+		 is_started = true; 
 
 	}else{
 		document.getElementById('notify').innerHTML = "type your name to start.";
