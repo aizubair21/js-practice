@@ -95,8 +95,12 @@
     font-family: sans-serif;
     border: 1px solid white;
     cursor: pointer;
+    margin:5px ;
 }
 
+.button {
+    display: flex;
+}
 
 #reasult{
     height: 100%;

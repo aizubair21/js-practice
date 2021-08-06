@@ -81,12 +81,15 @@ document.getElementById("submit")
 		let date = data_form.date.value;
 		let name = data_form.name.value;
 		let upName = name.toUpperCase();
-		console.log(upName);
+		let strName = parseInt(name);
 		// localStorage.setItem(date, " " );
-		//let clearAll = localStorage.getItem(date).clear;
+ 
+		if (name == "" || name == "0" || date == "0" || date == "") {
+			alert("Name or Date is no define");
+		}
 
-		if ( isNaN(name) || name == "0" || name === "Boolean" || name == "" || date == 0) {
-			alert(" You have to type your name and date correctly !");
+		if ( name == "NaN" || upName == "nan" || upName == "NA" || upName == "YES"  || !isNaN(strName) ||  name === "Boolean" ) {
+			alert(" You have to type your name and date correctly !\n 'yes, no, string, NaN, boolian, floot is not allow'");
 			document.getElementById('input_name').innerHTML = " ";
 		}
 
@@ -116,8 +119,8 @@ document.getElementById("submit")
 		}
 
 
-		if (!names.includes(name) && dates.includes(date) && name.length > 1) {
-			names.push(name);
+		if (!names.includes(upName) && dates.includes(date) && name.length > 1 && isNaN(strName)) {
+			names.push(upName);
 			localStorage.setItem(date, JSON.stringify(names));
 			alert(" Successfully received your addend. ");
 			data_form.name.value = "" ;
@@ -146,8 +149,16 @@ function make_list(date) {
     document.getElementById('list').innerHTML = list;
 }
  
- 
+function seeFromLocal() {
+	let date = data_form.date.value;
+	make_list(date);
+} 
 
+function clearStorage() {
+	alert("carefull, All of existing data will be removed. and may not be undone");
+	localStorage.clear();
+	
+}
 
 
 

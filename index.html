@@ -25,15 +25,19 @@
                    
                     <fieldset>
                         <legend>INPUT DATA</legend>
-                        
+
                         <label for="date">DATE: </label>
                             <input type="date" name="date">
                         <label for="name">NAME:</label>
                             <input type="text" name="name" id="input_name">
 
                             <br><br>
-
-                        <button type="button" value="submit" id="submit"> submit </button>
+                        <div class="button">
+                            <button type="button"  onclick="seeFromLocal()">See All</button>
+                            <button type="button" value="submit" id="submit"> Submit </button>
+                            <button type="button" onclick="clearStorage()">Clear</button>
+                        </div>
+                        
                     </fieldset>
 
                 </form>
