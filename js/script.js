@@ -155,10 +155,26 @@ function seeFromLocal() {
 } 
 
 function clearStorage() {
-	alert("carefull, All of existing data will be removed. and may not be undone");
-	localStorage.clear();
+
+	document.getElementById("clearAlert").style.display = "block" ;
+
+	document.getElementById("data_form").style.display = "none";
+	
+	// alert("carefull, All of existing data will be removed. and may not be undone");
+	// localStorage.clear();
 	
 }
+function agree_with() {
+	localStorage.clear();
+}
+
+function skip() {
+	document.getElementById("clearAlert").style.display = "none";
+	document.getElementById("data_form").style.display = "block";
+}
+
+
+
 
 
 

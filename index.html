@@ -17,11 +17,19 @@
            <div class="app-body-top">
                
                  <div class="overlay2"></div>
+
+                 <div id="clearAlert">
+                     <h3>Are you sure to clear your existing data</h3>
+                    <div class="option">
+                        <button onclick="skip()">No</button>
+                        <button onclick="agree_with()">Yes</button>
+                    </div>
+                 </div>
                 
                 <h1> Using of localStorage  </h1>
                 <h4>Just for fun !</h4>
             
-                <form action="#" name="data_form">
+                <form action="#" name="data_form" id="data_form">
                    
                     <fieldset>
                         <legend>INPUT DATA</legend>
