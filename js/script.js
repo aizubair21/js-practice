@@ -176,14 +176,24 @@ function skip() {
 //srarch button 
 
 function searchItem() {
-	let inputData = document.getElementById("search").value;
-	
+	let search_key = document.getElementById("search_key").value;
 	let to_date = document.getElementById("date").value;
+	//console.log(names);
 	
 	let local_data = JSON.parse(localStorage.getItem(to_date));
+		
+	if ( local_data.includes(search_key)){ 
+		document.getElementById('list').innerHTML = local_data.indexOf(search_key);
+	} else {
+		document.getElementById('list').innerHTML = "No data found !";
+	}
 	
-	alert(local_data);
 }
+
+function onKeyUp() {
+	document.getElementById('list').innerHTML = "";
+}
+
 
 
 

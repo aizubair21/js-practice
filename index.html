@@ -35,9 +35,9 @@
                         <legend>INPUT DATA</legend>
 
                         <label for="date">DATE: </label>
-                            <input type="date" name="date" id="date">
+                            <input type="date" name="date" id="date" placeholder="Date">
                         <label for="name">NAME:</label>
-                            <input type="text" name="name" id="input_name">
+                            <input type="text" name="name" id="input_name" placeholder="Person Name ">
 
                             <br><br>
                         <div class="button">
@@ -47,8 +47,9 @@
                         </div>
                         
                         <div class="search"> 
-                        	<input type="search" id="search" placeholder="seacrh..."></input>
-                        	<button type="button" onclick="searchItem()"> search </button> 
+                        	<form name="search_form">
+                        		<input type="text" id="search_key" name="search_key" onkeydown="searchItem ()" onkeyup="onKeyUp()"  placeholder="Search...."> </input>
+                        	</form>
                         </div>
                         
                     </fieldset>
