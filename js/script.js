@@ -108,7 +108,7 @@ document.getElementById("submit")
 		}
 
 
-		if (names.includes(name) && name != " ") {
+		if (names.includes(upName) && name != "") {
 			alert("Hay, who are you ? This day " + name + " " + "entered one time");
 			data_form.name.value = "";
 		}		
@@ -173,7 +173,17 @@ function skip() {
 	document.getElementById("data_form").style.display = "block";
 }
 
+//srarch button 
 
+function searchItem() {
+	let inputData = document.getElementById("search").value;
+	
+	let to_date = document.getElementById("date").value;
+	
+	let local_data = JSON.parse(localStorage.getItem(to_date));
+	
+	alert(local_data);
+}
 
 
 

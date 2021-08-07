@@ -35,7 +35,7 @@
                         <legend>INPUT DATA</legend>
 
                         <label for="date">DATE: </label>
-                            <input type="date" name="date">
+                            <input type="date" name="date" id="date">
                         <label for="name">NAME:</label>
                             <input type="text" name="name" id="input_name">
 
@@ -46,10 +46,16 @@
                             <button type="button" onclick="clearStorage()">Clear</button>
                         </div>
                         
+                        <div class="search"> 
+                        	<input type="search" id="search" placeholder="seacrh..."></input>
+                        	<button type="button" onclick="searchItem()"> search </button> 
+                        </div>
+                        
                     </fieldset>
 
                 </form>
             
+           
            </div>
 
 
