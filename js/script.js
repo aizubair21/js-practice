@@ -176,14 +176,22 @@ function skip() {
 //srarch button 
 
 // let local_data = [];
-// function searchItem() {
-// 	let search_key = document.getElementById("search_key").value;
+// function searchItem(key) {
+
+// 	console.log(key);
+// 	//let search_key = document.getElementById("search_key").value.toUpperCase();
 // 	let to_date = document.getElementById("date").value;
 
-// 	local_data = JSON.parse(localStorage.getItem(to_date));
+// 	local_data = JSON.parse(localStorage.getItem(to_date).toLowerCase());
 
-// 	//alert(search_key);
-// }
+// 	let finde_index = local_data.(element => element == key );
+// 	console.log(local_data);
+// 	let item = local_data[finde_index];
+// 	console.log(finde_index);
+// 	make_list(item);
+
+	//alert(search_key);
+}
 
 // function onKeyUp() {
 // 	let to_date = document.getElementById("date").value;

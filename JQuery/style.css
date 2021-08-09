@@ -1,0 +1,21 @@
+
+
+form{
+  background-color: gray;
+  padding: 25px;
+  border-radius: 20px;
+}
+.result {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  margin: 20px;
+  border-radius: 5px;
+  display: none;
+ overflow: scroll;
+ padding: 2px;
+}
+.result p {
+  box-sizing: border-box;
+  text-align: justify;
+}
