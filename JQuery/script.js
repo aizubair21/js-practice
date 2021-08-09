@@ -1,8 +1,13 @@
 
-$("input[type=button]").click (function (e) {
-console.log(e.currentTarget.type);
+$(":button").click (function () {
 
-  $("input[type=text]").focus().css("backgroundColor", "red");
+  $(":text").focus().css("backgroundColor", "red");
   $(".result").slideToggle("slow");
 });
 
+$(":text").keyup(function () {
+
+  console.log($(this).val() );
+  $("p").append($(":text").val());
+
+});
