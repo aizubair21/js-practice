@@ -15,53 +15,86 @@ var is_started = false;
 function gameStart(){
 	//alert("connent !");
 	let player_name = document.getElementById('start-command').value;
+	document.getElementById('show-error').innerHTML = " ";
+	document.getElementById("notify").innerHTML = "";
+	document.getElementById('show-all').innerHTML = " ";
+	$("#show-output").text(" ");
+	$("#game-input").val('');
 
 	if (player_name != ""){
-		player_name = document.getElementById('start-command').value = "";
-		document.getElementById('show-output').innerHTML = "Your first word is:<br> " + randomlySelect.toUpperCase(); 
-		 is_started = true; 
+		
+		document.getElementById('show-output').innerHTML = "Your first letter is:<br> " + randomlySelect.toUpperCase(); 
+		is_started = true; 
 
 	}else{
-		document.getElementById('notify').innerHTML = "type your name to start.";
+		alert("type your name to start.");
+		let start = document.getElementById("start-command");
+		$("#start-command").focus();
+		console.log(start);
 		
 	}
 }
 
+
 	
 
+for (let index = 0; index < 4; index++) {
 
-function checkItem(){
+	let error_count = [];
+	const element =index;
+	if (error_count == 3) {
+		document.getElementById('show-error').innerHTML = " ";
+		document.getElementById("notify").innerHTML = "";
+		document.getElementById('show-all').innerHTML = " ";
+		$("#show-output").text(" ");
+		$("#game-input").val('');
+		alert("You lose !");
+	}
 
-	let  input = document.getElementById('game-input').value;
-	//let uniquesaveItem = saveItem.includes(input)
-	if (is_started === true){
-		if (input == 0 || input == "" ){
-			//input field check
-			alert("plz, You have to input one item");
-		}else {
-		
-		//input else
-			if ( saveItem.includes(input) == true ){
-				document.getElementById('show-error').innerHTML = "Sorry, You chose this once time !";
-						
-			}else{
-				//if slese block
-				saveItem.push(input);
-				document.getElementById('notify').innerHTML = "Success !";
-						
-						
-					
+	var last_index ;
+	function again (item) {
+		last_index = item[item.length - 1].toUpperCase();
+		$("#show-output").html("Now, Your letter is: " +last_index);
+	}
+
+
+	function checkItem(){
+
+		let  input = document.getElementById('game-input').value.toUpperCase();
+		//let uniquesaveItem = saveItem.includes(input)
+		if (is_started === true){
+			if (input[0] == randomlySelect || input[0] == last_index) {
+					if (saveItem.includes(input)) {
+						alert(input+ ",this may use one time.");
+						error_count += 1;
+					} else {
+	
+						document.getElementById('show-error').innerHTML = " ";
+						document.getElementById("notify").innerHTML = "";
+						document.getElementById('show-all').innerHTML = " ";
+						$("#show-output").text(" ");
+						$("#game-input").val('');
+	
+						saveItem.push(input);
+						$("#notify").text("congrus ! Carry on.");
+						again(input);
+					}
+			} else {
+				alert ("Your input not correct. Accroding to given letter. ");
+				error_count += 1;
 			}
 			
-		}
-		
-		}else{
-				//if game is not started ........
-				alert("At first you have to start the game !");
-			}
-		
-	//function block....
-
+			}else{
+					//if game is not started ........
+					alert("At first you have to start the game !");
+					var btn = $("#gameStart").css({"background":"red", "color":"white", "border":"2px solid red"}).fade("slow");
+					console.log(btn);
+				}
+			
+		//function block....
+	
+	}
+	
 }
 
 function showItem(){
