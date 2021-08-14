@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mobile view </title>
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/fontawesome.min.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <script src="Js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/mobile-view.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+   
+</head>
+<body>
+    <div class="container">
+       
+        <div class="app">
+            <div class="overlay2"></div>
+            <div class="mobile-view-body">
+                <div class="overlay"></div>
+                <div class="top">
+                   
+                        <div class="top-left">
+                            <a href="#" class="left-container" onclick="showContent()"><i class="fas fa-align-left"></i></a>
+                            <div class="top-left-content">
+                                <ul class="fade">
+                                    <span onclick="hideContent()">&times</span>
+                                    <li><a href="">Home</a></li>
+                                    <li><a href="#">Service</a></li>
+                                    <li><a href="clock/index.html">Games</a></li>
+                                    <li><a href="#">Apps</a></li>
+                                    <li><a href="#">Security</a></li>
+                                    <li><a href="#">Malicius Text</a></li>
+                                    <li><a href="#">Play Protect</a></li>
+                                </ul>
+                            </div>
+                        
+                        
+                        </div>
+                        <div class="top-middle">
+                            <form action="#">
+                                <input type="text" placeholder="SEARCH" >
+                                <button type="button"> <i class="fas fa-search"></i></button>
+                            </form>
+                        </div>
+                        <div class="top-right">
+                        <a href="#" > <img onclick="showRightContent()" src="image/avatar.png" alt=""></a>
+                            <div class="content fade">
+                                <ul>
+                                    <span onclick="hideRightContent()">&times</span>
+                                    <li><a href="#">View profile</a></li>
+                                    <li><a href="#">Manage profile</a></li>
+                                    <li><a href="#">Manage profile</a></li>
+                                    <li><a href="#">Security</a></li>
+                                    <li><a href="#">Account Management</a></li>
+                                    <li><a href="#">Sign Out</a></li>
+                                </ul>
+                            </div>
+                        
+                        </div>
+                       
+                </div>
+                <div class="middle">
+                    <div class="middle-element">
+
+                        <div id="first">
+                         
+                            <div>
+                                <h2>input</h2>
+                                <div class="div1" id="div1"></div>
+                            </div>
+                            <div class="result">
+                               <h2>result</h2>
+                               <p id="result"></p>
+                            </div>
+                        </div>
+                        <div id="first">
+                            <div class="div1" id="div2">click this</div> 
+
+                        </div>
+                        <br> 
+                     
+
+                        <form action="">
+                            <fieldset>
+                                <label for="Name">Name:</label>
+                                    <input type="text" id="Name" placeholder="type your name " class="form-name">
+                                    <input type="button" value="Check" id="action-btn">
+                           
+                                    <textarea name="msg" id="msg" cols="40" rows="10"></textarea>
+                            </fieldset>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="bottom">
+                    <ul class="bottom-links">
+    
+                        <li >
+                            <a href="#" class="bottom-btn " onclick="clickFunction()"> 
+                                <i class="fas fa-gamepad"></i>
+                                <span>games</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="bottom-btn active" onclick="clickFunction()"> 
+                                <i class="fas fa-home"></i>
+                                <span>home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="bottom-btn " onclick="clickFunction()"> 
+                                <i class="fab fa-app-store"></i>
+                                <span>apps</span>
+                            </a>
+                        </li>   
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Js/mobile-view.js"></script>
+    <script src="Js/test.js"></script>
+</body>
+</html>
