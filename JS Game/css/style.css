@@ -15,7 +15,6 @@
 
 .app_body{
 	width: 100%;
-
 	border: 1px solid skyblue;
 	border-top-left-radius: 25px;
 	border-top-right-radius: 25px;
@@ -62,7 +61,7 @@
 }
 
 .play-duringer{
-	height: 100px;
+	height: 120px;
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;

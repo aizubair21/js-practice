@@ -173,6 +173,8 @@ function skip() {
 	document.getElementById("data_form").style.display = "block";
 }
 
+
+
 //srarch button 
 
 // let local_data = [];
@@ -189,9 +191,7 @@ function skip() {
 // 	let item = local_data[finde_index];
 // 	console.log(finde_index);
 // 	make_list(item);
-
-	//alert(search_key);
-}
+//alert(search_key);
 
 // function onKeyUp() {
 // 	let to_date = document.getElementById("date").value;
