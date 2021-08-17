@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Unique word game </title>
-		<script src="../jquery-3.6.0.min.js"></script>
+		<link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
+		<script src="js/jquery-3.6.0.min.js"></script>
 		<link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -15,7 +16,9 @@
 			<div class="overlay"></div>
 			<div class="overlay2"></div>
 			<div class="game-display">
-				<input type="text" id="start-command" placeholder="Your Name :">
+				<div class="name-input-div">
+					<input type="text" id="start-command" placeholder="Your Name :" ><label for="start-command"><span><i class="fas fa-user-circle"></i></span></label>
+				</div>
 
 				<h2 >Game Output</h2>
 
@@ -36,8 +39,30 @@
 					<input type="text" id="game-input" placeholder="Type your word:">
 					<button onclick="checkItem()">GO</button><br>
 					<button onclick="showItem()">see all</button>
+
 				</div>
 		</div>
+
+			<div id="system">
+
+				<div id="aboutGame">
+					<h2>About this Game</h2>
+					<p>This is a symple brain game. this game make unique word from yourself by taking input from user. </p>
+					<button class="first-next"> next </button>
+				</div>
+
+				<div id="howToStart">
+					<h2>How to start</h2>
+					<p>To start this game, plz, give your name at first. game memorize your name. after giving you name click "start" button to start game.</p>
+					<button class="second-next"> next </button>
+				</div>
+
+				<div id="afterStartGame">
+					<p>after start game, game give you a randon letter by himself. you have to type a meaningfull word according that letter. and your word must start with that letter. then so on.....</p>
+					<button class="third-next"> Done.. </button>
+				</div>
+
+			</div>
 	</div>
 	
 	

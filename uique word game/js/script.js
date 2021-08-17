@@ -10,7 +10,10 @@ var randomlySelect =  selectedItem[Math.floor(Math.random() * 26+1)];
 
 var is_started = false; 
 
-
+var ntify = $("#notify");
+var showOutput = $("#show-output");
+var showAll = $("#show-all");
+var showError = $("#show-error");; 
 
 function gameStart(){
 	//alert("connent !");
@@ -18,7 +21,7 @@ function gameStart(){
 	document.getElementById('show-error').innerHTML = " ";
 	document.getElementById("notify").innerHTML = "";
 	document.getElementById('show-all').innerHTML = " ";
-	$("#show-output").text(" ");
+	showOutput.text(" ");
 	$("#game-input").val('');
 
 	if (player_name != ""){
@@ -46,7 +49,7 @@ for (let index = 0; index < 4; index++) {
 		document.getElementById('show-error').innerHTML = " ";
 		document.getElementById("notify").innerHTML = "";
 		document.getElementById('show-all').innerHTML = " ";
-		$("#show-output").text(" ");
+		showOutput.text(" ");
 		$("#game-input").val('');
 		alert("You lose !");
 	}
@@ -72,7 +75,7 @@ for (let index = 0; index < 4; index++) {
 						document.getElementById('show-error').innerHTML = " ";
 						document.getElementById("notify").innerHTML = "";
 						document.getElementById('show-all').innerHTML = " ";
-						$("#show-output").text(" ");
+						showOutput.text(" ");
 						$("#game-input").val('');
 	
 						saveItem.push(input);
@@ -101,7 +104,9 @@ function showItem(){
 	document.getElementById('show-all').innerHTML = saveItem;
 }
 
-
+document.onload(() => {
+	alert("connect");
+});
 
 
 

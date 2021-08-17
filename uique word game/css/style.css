@@ -41,7 +41,7 @@
 input {
     padding: 5px 10px;
     text-align: center;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, .2);
     box-shadow: 0px 0px 5px rgb(10, 10, 10);
     margin: 5px;
     border-radius: 25px;
@@ -62,14 +62,35 @@ button{
 
 }
 button:hover {
-    background-color: ;
     opacity: .8;
+}
+
+#system{
+    margin: 10px;
+    padding: 10;
+    /* border: 1px solid; */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    display: flex;
+    opacity: 0;
+}
+#system div {
+    width: 300px;
+    /* border: 1px solid white; */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
+    margin: 0 10px;
 }
 
 
 
 
-@media screen and (max-width:360px) {
+
+
+@media screen and (max-width:420px) {
     .container{
         width: 95%;
         margin: 0 auto;
@@ -83,7 +104,7 @@ button:hover {
     }
 
     body {
-        background-image: url('image/pic6.jpeg');
+        background-image: url('../image/pic6.jpeg');
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -113,6 +134,9 @@ button:hover {
     }
     .game-control {
         z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
     }
 
     .overlay {
@@ -153,7 +177,14 @@ button:hover {
 
 }
 
-@media (min-width: 360px) and (max-width:570px) {
+@media (min-width: 420px) and (max-width:570px) {
+    
+    body {
+        background-image: url('../image/pic6.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
     .container {
         width: 95%;
         margin: 0 auto;
@@ -166,19 +197,27 @@ button:hover {
 }
 
 @media (min-width:570px) {
+
+    body {
+        background-image: url('../image/pic6.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
     .container {
         width: 570px;
         margin: 0 auto;
         box-shadow: 0px 0px 5px black;
         padding: 1px 0;
+        border-radius: 15px;
     }
     .game-body {
         position: relative;
         /* border: 1px solid red; */
-        border-radius: 10px;
+        /* border-radius: 10px; */
         box-shadow: 0px 0px 3px rgb(94, 89, 89);
-        padding: 10px;
-        margin: 25px;
+        /* padding: 10px; */
+        margin: 15px;
         text-align: center;
         height: 90vh;
         display: flex;
@@ -197,6 +236,11 @@ button:hover {
     }
     .game-control {
         z-index: 1;
+        /* border: 1px solid ; */
+        border-radius: 10px;
+        background-color: rgba( 255,255, 255, .2);
+        padding: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
     }
     
     .overlay {
@@ -211,6 +255,26 @@ button:hover {
         transform: rotate(45deg);
     }
     
+    .name-input-div {
+        position: relative;
+        /* border: 1px solid; */
+    }
+    
+    .name-input-div span{
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        border: 1px solid black;
+        padding:2px;
+        border-radius: 50%;
+        width:20px;
+        height: 20px;
+    }
+
+    .fa-user-circle{
+        font-size: 20px;
+    }
 
     
 }
