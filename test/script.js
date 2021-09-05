@@ -1,7 +1,8 @@
 $(function() {
     $(".owlCarosel1").owlCarousel({
-        animateOut: 'slideOutDown',
-        animateIn: 'rubberBand',
+         animateOut: 'zoomOutDown',
+        animateIn: 'zoomInDown',
+       
         center:false,
         items:1,
         loop:true,
@@ -20,4 +21,54 @@ $(function() {
     // $(".stop").on("click", function (e) {
     //     owl.trigger('stop.owl.autoplay');
     // });
+
+  
+    let student_information_list = [];
+    student_information_list = JSON.parse(localStorage.getItem('student_list'));
+
+    document.querySelector('#save_info').addEventListener("click", function (e) {
+        e.preventDefault();
+        let name = data_form.name.value;
+        let roll = data_form.roll.value;
+        let subject = data_form.dipt.value;
+
+        console.log(name, roll, subject);
+
+        let student_info = {
+            name: name,
+            roll: roll,
+            subject: subject,
+        }
+
+        student_information_list.push(student_info);
+    
+        localStorage.setItem("student_list", JSON.stringify(student_information_list));
+
+
+        render_student_information_list();
+    })
+
+
+
+    function render_student_information_list () {
+        let tbody = document.querySelector('#showInfo');
+
+
+       student_information_list = JSON.parse(localStorage.getItem('student_list'));
+
+       student_information_list.forEach(element => {
+           console.log(element);
+           let data = '';
+           data += `<tr>
+                        <td>${element.name} </td>
+                        <td>${element.roll} </td>
+                        <td>${element.subject} </td> 
+                    </tr>`;
+           tbody.innerHTML = data;
+       });
+
+
+       
+    }
+
 });

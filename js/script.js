@@ -80,12 +80,17 @@ document.getElementById("submit")
 	.addEventListener("click", function () {
 		let date = data_form.date.value;
 		let name = data_form.name.value;
+		let roll = data_form.roll.value;
+		console.log(roll);
+
 		let upName = name.toUpperCase();
 		let strName = parseInt(name);
+
 		// localStorage.setItem(date, " " );
  
 		if (name == "" || name == "0" || date == "0" || date == "") {
-			alert("Name or Date is no define");
+			alert("Date not defined !");
+			document.getElementById()
 		}
 
 		if ( name == "NaN" || upName == "nan" || upName == "NA" || upName == "YES"  || !isNaN(strName) ||  name === "Boolean" ) {
@@ -121,6 +126,7 @@ document.getElementById("submit")
 
 		if (!names.includes(upName) && dates.includes(date) && name.length > 1 && isNaN(strName)) {
 			names.push(upName);
+
 			localStorage.setItem(date, JSON.stringify(names));
 			alert(" Successfully received your addend. ");
 			data_form.name.value = "" ;
@@ -128,7 +134,7 @@ document.getElementById("submit")
 		} 
 
 		// document.getElementById("list").innerHTML = names;
-		
+		// document.getElementsByClassName('counter').innerHTML = `total submit: ${localStorageLength}`;
 });
 
 function make_list(date) {
@@ -136,22 +142,32 @@ function make_list(date) {
 
     names = localStorage.getItem(date);
 
+		document.querySelector('.counter').innerHTML = "total:" + JSON.parse(names).length;
+
     if (names && names.length > 0) {
         names = JSON.parse(localStorage.getItem(date));
         for (let index = 0; index < names.length; index++) {
             const element = names[index];
-            list += `<li class="list-group-item">${element}</li>`;
+						console.log(element);
+            list += `<tr>
+						<td class="table-item">${element}</td>
+						</tr>`;
         }
     } else {
-        list = '<li class="list-group-item">no result</li>';
+        list = '<tr><td colspan="3" style="text-align: center" class="table-item">no result</td></tr>';
     }
 
-    document.getElementById('list').innerHTML = list;
+    document.getElementById('student-info-table-body').innerHTML = list;
+		
 }
  
 function seeFromLocal() {
 	let date = data_form.date.value;
 	make_list(date);
+
+
+
+	
 } 
 
 function clearStorage() {

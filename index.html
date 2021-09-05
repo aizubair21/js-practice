@@ -56,9 +56,11 @@
                         <legend>INPUT DATA</legend>
 
                         <label for="date">DATE: </label>
-                            <input type="date" name="date" id="date" placeholder="Date">
+                            <input type="date" name="date" id="date" placeholder="Date" required>
                         <label for="name">NAME:</label>
-                            <input type="text" name="name" id="input_name" placeholder="Person Name ">
+                            <input type="text" name="name" id="input_name" placeholder="Person Name">
+                        <label for="roll">ROLL</label>
+                            <input type="number" id="input_roll" placeholder="Person Roll" name="roll" required>
 
                             <br><br>
                         <div class="button">
@@ -80,12 +82,19 @@
            
            </div>
 
-
+           <div class="counter"></div>
             <div id="reasult">
                 <div class="overlay3"></div>
-                <ul id="list">
-        
-                </ul>
+                <table class="table">
+                    <thead class="tab-content" style="font-size:12px">
+                        <td>NAME</td>
+                        <td>ROLL</td>
+                        <td>ENTER TIME</td>
+                    </thead>
+                    <tbody id="student-info-table-body" style="font-size:10px">
+                      
+                    </tbody>
+                </table>
             </div>
     
         </div>

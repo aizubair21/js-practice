@@ -11,28 +11,87 @@
     <link rel="stylesheet" href="owl.carousel.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+
+  <h4>Show student information</h4>
+  <form action="#" name="data_form">
+    <input type="text" name="name" >
+    <input type="number" name="roll">
+    <input type="text" name="dipt">
+    
+    <button id="save_info"> save </button>
+    <button type="button" onclick="render_student_information_list()" > see data </button>
+
+  </form>
+<div >
+  <div id="counter"></div>
+  <table class="table" border="1">
+    <thead>
+      <th>Name</th>
+      <th>Roll</th>
+      <th>Dipt</th>
+    </thead>
+    <tr id="showInfo">
+
+    </tr>
+  </table>
+</div>
+
+<div id="overRideLoder">
+  <div class="red"></div>
+  <div class="green"></div>
+</div>
+
+
+<div class="loading-dots">
+	<div class="loading-dots--dot"></div>
+	<div class="loading-dots--dot"></div>
+	<div class="loading-dots--dot"></div>
+  <div class="loading-dots--dot"></div>
+  <div class="loading-dots--dot"></div>
+</div>
+
+<div class="lighting-dots">
+	<div class="dots" style="animation-delay: .1s;"></div>
+	<div class="dots" style="animation-delay: .2s;"></div>
+	<div class="dots" style="animation-delay: .3s;"></div>
+  <div class="dots" style="animation-delay: .4s;"></div>
+	<div class="dots" style="animation-delay: .5s;"></div>
+	<div class="dots" style="animation-delay: .6s;"></div>
+  <div class="dots" style="animation-delay: .8s;"></div>
+	<div class="dots" style="animation-delay: 1s;"></div>
+	<div class="dots" style="animation-delay: 1.2s;"></div>
+</div>
+
+
+
+
+
+
+
+
     <div class="owlCarosel1 owl-carousel owl-theme">
-        <div class="item animate__pulse">
+        <div>
             <img src="image/02.jpg" alt="">
         </div>
-
-        <div class="item animate__pulse">
+        <div>
             <img src="image/03.jpg" alt="">
         </div>
-        <div class="item animate__pulse">
+        <div>
             <img src="image/04.jpg" alt="">
         </div>
-        <div class="item animate__pulse">
+        <div>
             <img src="image/05.jpg" alt="">
         </div>
-        <div class="item animate__pulse">
+        <div >
             <img src="image/06.jpg" alt="">
         </div>
-        <div class="item animate__pulse">
+        <div >
             <img src="image/07.jpg" alt="">
         </div>
-        <div class="item animate__pulse">
+        <div >
             <img src="image/08.jpg" alt="">
         </div>
 
@@ -42,13 +101,61 @@
         <button class="start">start</button>
         <button class="stop">stop</button>
     </div>
+<h2>dancing dot</h2>
+<div id="dancing-dots">
 
+    <div class="dot" style="animation-delay: .1s;"></div>
+    <div class="dot" style="animation-delay: .1.5s;"></div>
+    <div class="dot" style="animation-delay: .2s;"></div>
+    <div class="dot" style="animation-delay: .2.5s;"></div>
+    <div class="dot" style="animation-delay: .3s;"></div>
+    <div class="dot" style="animation-delay: .3.5s;"></div>
+    <div class="dot" style="animation-delay: .4s;"></div>
+    <div class="dot" style="animation-delay: .4.5s;"></div>
+    <div class="dot" style="animation-delay: .5s;"></div>
+</div>
 
+<br> <br> <hr>
+<div class="lighting-dots-two">
+	<div class="dots" style="animation-delay: .1s;"></div>
+	<div class="dots" style="animation-delay: .2s;"></div>
+	<div class="dots" style="animation-delay: .3s;"></div>
+  <div class="dots" style="animation-delay: .4s;"></div>
+	<div class="dots" style="animation-delay: .5s;"></div>
+	<div class="dots" style="animation-delay: .6s;"></div>
+  <div class="dots" style="animation-delay: .8s;"></div>
+	<div class="dots" style="animation-delay: 1s;"></div>
+	<div class="dots" style="animation-delay: 1.2s;"></div>
+</div>
+<br> <hr>
 
+<div class="color-dots">
+	<div class="dots"></div>
+	<div class="dots" style="animation-delay: .1s;"></div>
+	<div class="dots" style="animation-delay: .2s;"></div>
+  <div class="dots" style="animation-delay: .3s;"></div>
+	<div class="dots" style="animation-delay: .4s;"></div>
+	<div class="dots" style="animation-delay: .5s;"></div>
+  <div class="dots" style="animation-delay: .6s;"></div>
+	<div class="dots" style="animation-delay: .7s;"></div>
+	<div class="dots" style="animation-delay: .8s;"></div>
+  <div class="dots" style="animation-delay: .9s;"></div>
+</div>
+<br> <hr>
 
+<div class="circle-dot style="display: flex">
+  <div class="dots"></div>
+  <div class="dots"></div>
+  <div class="dots"></div>
+  <div class="dots"></div>
+  <div class="dots"></div>
+</div>
 
     <script src="jquery-3.6.0.min.js"></script>
     <script src="owl.carousel.min.js"></script>
+    <script src="script.js"></script>
+
+
     <script src="script.js"></script>
 </body>
 </html>

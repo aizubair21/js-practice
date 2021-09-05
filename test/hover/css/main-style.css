@@ -1,0 +1,182 @@
+.row {
+  display: flex;
+}
+.card {
+  width: 200px;
+  height: 200px;
+  box-shadow: 0px 0px 50px black inset;
+  border-radius: 5px;
+  background-color: inherit;
+  position: relative;
+  padding: 10px 0;
+  margin:  10px;
+  font-family: sans-serif;
+  font-size: 20px; 
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+}
+.card .overlay-from-left {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+ background:linear-gradient(135deg, rgba(189, 131, 6, 0.877), rgba(172, 57, 37, 0.877));
+  transition: .5s;
+
+}
+.card:hover .overlay-from-left {
+  left: 0;
+}
+
+/* hover from right  */
+
+.card .overlay-from-right {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+ background:linear-gradient(135deg, rgba(189, 131, 6, 0.877), rgba(172, 57, 37, 0.877));
+  transition: .5s;
+  overflow: hidden;
+}
+.card:hover .overlay-from-right {
+  right: 0;
+}
+
+/* hover from top  */
+
+.card .overlay-from-top {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ background:linear-gradient(135deg, rgba(189, 131, 6, 0.877), rgba(172, 57, 37, 0.877));
+  transition: .5s;
+  overflow: hidden;
+}
+.card:hover .overlay-from-top {
+  top: 0;
+}
+
+/* hover from bottom  */
+.card .overlay-from-bottom {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ background:linear-gradient(135deg, rgba(189, 131, 6, 0.877), rgba(172, 57, 37, 0.877));
+  transition: .5s;
+  overflow: hidden;
+}
+.card:hover .overlay-from-bottom {
+  bottom: 0;
+}
+
+
+.card .overlay-zoom-in{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+ background:linear-gradient(135deg, rgba(189, 131, 6, 0.877), rgba(172, 57, 37, 0.877));
+  transition: .5s;
+  overflow: hidden;
+}
+.card:hover .overlay-zoom-in {
+  transform: scale(1);
+}
+
+/* rotate hover animation start */
+.card .overlay-zoom-out {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:linear-gradient(135deg, rgba(189, 131, 6, 0.877), rgba(172, 57, 37, 0.877));
+  transition: .5s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform:rotateY(360deg);
+  transition: 1s;
+  box-shadow: 0px 0px 10px rgb(99, 97, 97) inset;
+
+}
+.rotate h2 {
+  transition: linear;
+  transition-delay: .4s;
+  align-self: center;
+  
+}
+.rotate:hover h2 {
+  transition: linear;
+  transition-delay: .2s;
+  opacity: 0;
+}
+.card:hover .overlay-zoom-out {
+  transform: rotateY(0);
+}
+.rotate .overlay-container {
+  opacity: 0;
+  transition: linear;
+  transition-delay: .4s;
+  position: absolute;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+}
+.rotate:hover .overlay-container {
+  opacity: 1;
+  transition: .1s linear;
+  transition-delay: .4s;
+}
+
+/* rotate hover animation end  */
+
+
+.card .overlay-rotate-3d{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ background:linear-gradient(135deg, rgba(189, 131, 6, 0.877), rgba(172, 57, 37, 0.877));
+  transition: .5s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform:rotateY(90deg);
+  transition: 1s;
+
+}
+.card .overlay-container {
+  transition-delay: .5s;
+  transition: linear .5;
+  opacity: 0;
+}
+.card .overlay-rotate-3d:hover .overlay-container {
+  transition-delay: 1s;
+  transition: linear .5s;
+  opacity: 1;
+}
+.card:hover .overlay-rotate-3d {
+ transform: rotateY(0);
+ transition: linear .5s;
+ opacity: 1;
+}
