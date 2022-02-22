@@ -119,7 +119,6 @@
 		function createElement (name, loc) {
 			let option = document.createElement("option");
 			let optionTest = document.createTextNode(name);
-			//optionTest.setAttribute("value" = id);
 			option.appendChild(optionTest);
 			loc.appendChild(option);
 		};
@@ -140,22 +139,22 @@
 		// 	let mainDiv = document.getElementById("divition")
 		// 	createElement (element.name,element.id,mainDiv);
 		// };
-		
+		let selectDivId ;
 		function selectDistrict (name) {
-			console.log(name);
-			// const divition_id = createOption(divisions, name);
-			// console.log(divition_id);
+			fetch("divisions.json")
+				.then (Response => Response.json())
+				.then(data => {
+					for (let index = 0; index < data.length; index++) {
+						const element = data[index];
+						if (element.name == name) {
+							//console.log(element.id)
+							selectDivId = element.id
+						}
+					} 
+				})
+			
 			let disDiv = document.getElementById("district");
-		    disDiv.innerHTML = "";
-			// for (let d = 0; d < districts.length; d++) {
-			// 	let districts_element = districts[d];
-				
-			// 	if (districts_element.division_id == divition_id){
-			// 		createElement(districts_element.name, disDiv);
-			// 	};
-				
-			// }
-
+			disDiv.innerHTML = "";
 			fetch("districts.json")
 			.then(Response => Response.json())
 			.then (data => {
@@ -164,9 +163,11 @@
 				
 				for (let index = 0; index < dist.length; index++) {
 					const element = dist[index];
-					//console.log(element)
-					if (element.division_id == 4){
-						console.log(element)
+					//console.log(element.division_id)
+					if (element.division_id == selectDivId){
+						//console.log(element)
+						console.log(element.name)
+						createElement (element.name, disDiv)
 					}
 				}
 			})
@@ -176,16 +177,6 @@
 			
 		};
 		
-		
-		
-		// var xhr = new XMLHttpRequest();
-		// xhr.onreadystatechange = function () {
-		// 	if (this.readyState == 4 && this.status == 200) {
-		// 		console.log(xhr.responseText);
-		// 	}
-		// };
-		// xhr.open("GET", "test.json", true);
-		// xhr.send();
 	</script>
 
 	<script>
