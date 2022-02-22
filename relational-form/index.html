@@ -24,18 +24,18 @@
 			<div>
 				<label for="divition">Divition :</label>
 				<select style="border:1px solid black" id="divition" onchange="selectDistrict(this.value)">
-					<option disabled>Select your divition </option>
+					<option >Select your divition </option>
 				</select>
 				
 				<label for="district">District :</label>
 				<select name="district" id="district">
-					<option disabled>Select your district </option>
+					<option >Select your district </option>
 				</select>
 			</div>
 		</div>
 	</form>
 	<div id="demo"></div>
-	<script type="text/javascript" src="test.json"></script>
+	<script type="application/avascript" src="test.json"></script>
 	<script>
 		const divisions = [
 		{"id":"1","name":"Chattagram","bn_name":"চট্টগ্রাম","url":"www.chittagongdiv.gov.bd"},
@@ -119,43 +119,58 @@
 		function createElement (name, loc) {
 			let option = document.createElement("option");
 			let optionTest = document.createTextNode(name);
+			//optionTest.setAttribute("value" = id);
 			option.appendChild(optionTest);
 			loc.appendChild(option);
 		};
 		
-		function createOption (target, name) {
-			for (let index = 0; index < target.length; index++){
-				let element = target[index];
-				if (element.name == name ) {
-					return element.id;
-				}
-			}
-		};
+		
+		// function createOption (target, name) {
+		// 	for (let index = 0; index < target.length; index++){
+		// 		let element = target[index];
+		// 		if (element.name == name ) {
+		// 			return element.id;
+		// 		}
+		// 	}
+		// };
 	
-		for (let index = 0; index < divisions.length; index++) {
-		 	let element = divisions[index];
-		 	//console.log(element.name);
-			let mainDiv = document.getElementById("divition")
-			createElement (element.name,mainDiv);
-		};
+		// for (let index = 0; index < divisions.length; index++) {
+		//  	let element = divisions[index];
+		//  	//console.log(element.name);
+		// 	let mainDiv = document.getElementById("divition")
+		// 	createElement (element.name,element.id,mainDiv);
+		// };
 		
 		function selectDistrict (name) {
 			console.log(name);
-			const divition_id = createOption(divisions, name);
-			console.log(divition_id);
+			// const divition_id = createOption(divisions, name);
+			// console.log(divition_id);
 			let disDiv = document.getElementById("district");
 		    disDiv.innerHTML = "";
-			for (let d = 0; d < districts.length; d++) {
-				let districts_element = districts[d];
+			// for (let d = 0; d < districts.length; d++) {
+			// 	let districts_element = districts[d];
 				
-				if (districts_element.division_id == divition_id){
-					createElement(districts_element.name, disDiv);
-				};
-				if (divition_id === "undefined") {
-					createElement("select", disDiv);
+			// 	if (districts_element.division_id == divition_id){
+			// 		createElement(districts_element.name, disDiv);
+			// 	};
+				
+			// }
+
+			fetch("districts.json")
+			.then(Response => Response.json())
+			.then (data => {
+				const dist = (data[2].data);
+				//console.log(dist)
+				
+				for (let index = 0; index < dist.length; index++) {
+					const element = dist[index];
+					//console.log(element)
+					if (element.division_id == 4){
+						console.log(element)
+					}
 				}
-				
-			}
+			})
+
 			
 				
 			
@@ -163,14 +178,42 @@
 		
 		
 		
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function () {
-			if (this.readyState == 4 && this.status == 200) {
-				console.log(xhr.responseText);
-			}
-		};
-		xhr.open("GET", "test.json", true);
-		xhr.send();
+		// var xhr = new XMLHttpRequest();
+		// xhr.onreadystatechange = function () {
+		// 	if (this.readyState == 4 && this.status == 200) {
+		// 		console.log(xhr.responseText);
+		// 	}
+		// };
+		// xhr.open("GET", "test.json", true);
+		// xhr.send();
+	</script>
+
+	<script>
+		fetch("divisions.json")
+			.then(Response => Response.json())
+			.then(data => {
+				//console.log(data)
+				for (let index = 0; index < data.length; index++) {
+					const element = data[index];
+					//console.log(element.id)
+					let mainDiv = document.getElementById("divition")
+					createElement(element.name, mainDiv);
+				}
+			})
+
+ 
+		fetch("districts.json")
+			.then(Response => Response.json())
+			.then (data => {
+				const dist = (data[2].data);
+				//console.log(dist)
+				
+				for (let index = 0; index < dist.length; index++) {
+					const element = dist[index];
+					//console.log(element)
+
+				}
+			})
 	</script>
 </body>
 </html>
